@@ -9,7 +9,10 @@ public class Piece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (!this.IsValidPiecePosition())
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame

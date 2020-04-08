@@ -43,7 +43,7 @@ public class GridHelper : MonoBehaviour
 
     public static void DecreaseRowsAbove(int y)
     {
-        for (int i = y; i < height; y++)
+        for (int i = y; i < height; i++)
         {
             DecreaseRow(i);
         }
@@ -70,6 +70,19 @@ public class GridHelper : MonoBehaviour
                 DeleteRow(y);
                 DecreaseRowsAbove(y + 1);
                 y--;
+            }
+        }
+
+        CleanPieces();
+    }
+
+    private static void CleanPieces()
+    {
+        foreach (GameObject piece in GameObject.FindGameObjectsWithTag("Piece"))
+        {
+            if (piece.transform.childCount == 0)
+            {
+                Destroy(piece);
             }
         }
     }
