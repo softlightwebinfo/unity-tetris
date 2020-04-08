@@ -29,7 +29,7 @@ public class PieceSpawner : MonoBehaviour
 
     IEnumerator PrepareNextPiece()
     {
-        yield return new WaitForSecondsRealtime(1.2f);
+        yield return new WaitForSecondsRealtime(0.0f);
 
         int i = Random.Range(0, this.levelPieces.Length);
         nextPiece = Instantiate(this.levelPieces[i], this.transform.position, Quaternion.identity);
